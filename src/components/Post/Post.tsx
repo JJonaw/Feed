@@ -14,15 +14,13 @@ interface Author {
     avatarUrl: string
 }
 
-interface Content {
-    type: 'paragraph' | 'link'
-    content: string
-}
-
 interface PostProps {
     author: Author
     publishedAt: Date
-    content: Array<Content>
+    content: {
+        type: string
+        content: string
+    }[]
 }
 
 export function Post({ author, content, publishedAt }:PostProps) {
